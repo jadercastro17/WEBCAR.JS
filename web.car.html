@@ -1,0 +1,79 @@
+
+<!DOCTYPE html/>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WEB CAR – Carros Premium</title>
+  <link rel="stylesheet" href="webcar.css" />
+  <script src="webcar.js"></script>
+</head>
+<body>
+
+<header>
+  <h1>WEB CAR</h1>
+  <p>Os melhores carros para aluguel e venda</p>
+</header>
+
+  <input type="text" id="busca" placeholder="Buscar por nome do carro…" oninput="renderCards()" />
+  <button class="btn btn-primary" onclick="abrirModal()">+ Adicionar Carro</button>
+</div>
+
+<section class="carros" id="grid"></section>
+
+<div class="overlay" id="overlay" onclick="fecharModalOverlay(event)">
+  <div class="modal">
+    <h3 id="modalTitulo">Adicionar Carro</h3>
+
+    <div class="form-group">
+      <label>Nome do Carro</label>
+      <input type="text" id="f-nome" placeholder="Ex: Ferrari 488" />
+    </div>
+    <div class="form-group">
+      <label>URL da Imagem</label>
+      <input type="text" id="f-img" placeholder="https://…" />
+    </div>
+    <div class="form-group">
+      <label>Motor</label>
+      <input type="text" id="f-motor" placeholder="Ex: 3.9 V8 Biturbo" />
+    </div>
+    <div class="form-group">
+      <label>Potência</label>
+      <input type="text" id="f-potencia" placeholder="Ex: 660 cv" />
+    </div>
+    <div class="form-group">
+      <label>Velocidade Máxima</label>
+      <input type="text" id="f-vel" placeholder="Ex: 330 km/h" />
+    </div>
+    <div class="form-group">
+      <label>Preço / dia (R$)</label>
+      <input type="text" id="f-preco" placeholder="Ex: 2.500.000" />
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn btn-cancel" onclick="fecharModal()">Cancelar</button>
+      <button class="btn btn-primary" onclick="salvarCarro()">Salvar</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="confirm-box" id="confirmBox">
+  <div class="confirm-inner">
+    <div class="icon"></div>
+    <h4>Remover carro?</h4>
+    <p>Esta ação não pode ser desfeita.</p>
+    <div class="confirm-actions">
+      <button class="btn btn-cancel" onclick="fecharConfirm()">Cancelar</button>
+      <button class="btn btn-danger" id="confirmBtn">Remover</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<footer>© 2026 WEB CAR — Todos os direitos reservados.</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
